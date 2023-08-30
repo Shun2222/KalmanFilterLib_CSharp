@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "KalmanFilter/1.0.0": {
+        "dependencies": {
+          "Matrix": "1.0.0"
+        },
+        "runtime": {
+          "KalmanFilter.dll": {}
+        }
+      },
+      "Matrix/1.0.0": {
+        "runtime": {
+          "Matrix.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KalmanFilter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Matrix/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

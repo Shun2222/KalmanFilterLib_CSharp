@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "KalmanTest/1.0.0": {
+        "dependencies": {
+          "KalmanFilter": "1.0.0",
+          "Matrix": "1.0.0",
+          "ImagingSolution.Mat": "0.1.1.0"
+        },
+        "runtime": {
+          "KalmanTest.dll": {}
+        }
+      },
+      "KalmanFilter/1.0.0": {
+        "dependencies": {
+          "Matrix": "1.0.0"
+        },
+        "runtime": {
+          "KalmanFilter.dll": {}
+        }
+      },
+      "Matrix/1.0.0": {
+        "runtime": {
+          "Matrix.dll": {}
+        }
+      },
+      "ImagingSolution.Mat/0.1.1.0": {
+        "runtime": {
+          "ImagingSolution.Mat.dll": {
+            "assemblyVersion": "0.1.1.0",
+            "fileVersion": "0.1.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KalmanTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KalmanFilter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Matrix/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ImagingSolution.Mat/0.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

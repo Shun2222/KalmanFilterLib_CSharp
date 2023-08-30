@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KalmanFilter\KalmanFilter.csproj" />
+    <ProjectReference Include="..\Matrix\Matrix.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ImagingSolution.Mat">
+      <HintPath>..\..\..\..\..\..\Downloads\ImagingSolution.Mat_V011\ImagingSolution.Mat_V011\dll\ImagingSolution.Mat.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

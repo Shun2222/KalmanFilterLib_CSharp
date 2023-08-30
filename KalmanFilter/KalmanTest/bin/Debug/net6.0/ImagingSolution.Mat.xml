@@ -1,0 +1,491 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImagingSolution.Mat</name>
+    </assembly>
+    <members>
+        <member name="T:ImagingSolution.Mat">
+            <summary>
+            行列演算クラスライブラリ
+            </summary>
+        </member>
+        <member name="M:ImagingSolution.Mat.Radians(System.Double)">
+            <summary>
+            角度の度数（°）からラジアンへ変更
+            </summary>
+            <param name="degree">角度（°）を指定します。</param>
+            <returns>ラジアン単位の角度</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Degrees(System.Double)">
+            <summary>
+            角度のラジアンから度へ変更
+            </summary>
+            <param name="radian">角度（radian）を指定します。</param>
+            <returns>度数（°）単位の角度</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Identity``1(System.Int32)">
+            <summary>
+            単位行列を取得します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="size">行列のサイズを指定します。</param>
+            <returns>単位行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Add``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            行列の要素ごとに加算します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="matA">行列（二次元配列）を指定します。</param>
+            <param name="matB">行列（二次元配列）を指定します。</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.AddS``1(``0[0:,0:],``0)">
+            <summary>
+            行列の各要素にスカラ値を加算します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="value">加算する値を指定します。</param>
+            <returns>行列の各要素にスカラ値が加算された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Sub``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            行列の要素ごとに減算します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="matA">行列（二次元配列）を指定します。</param>
+            <param name="matB">行列（二次元配列）を指定します。</param>
+            <returns>行列の各要素にスカラ値が減算された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.SubS``1(``0[0:,0:],``0)">
+            <summary>
+            行列の各要素にスカラ値を減算します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="value">行列の各要素にスカラ値が減算された行列</param>
+            <returns></returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Mult``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            行列の積
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="matA">行列（二次元配列）を指定します。</param>
+            <param name="matB">行列（二次元配列）を指定します。</param>
+            <returns>行列の積</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Hadam``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            アダマール積（行列の各要素ごとの積）
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="matA">行列（二次元配列）を指定します。</param>
+            <param name="matB">行列（二次元配列）を指定します。</param>
+            <returns>アダマール積</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Cross``1(``0[0:,0:],``0[0:,0:])">
+            <summary>
+            外積
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="matA">行列（二次元配列[3行1列]）を指定します。</param>
+            <param name="matB">行列（二次元配列[3行1列]）を指定します。</param>
+            <returns>外積の値</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Transpose``1(``0[0:,0:])">
+            <summary>
+            転置行列
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <returns>転置行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.CloneMat``1(``0[0:,0:])">
+            <summary>
+            クローンの作成
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <returns>matがコピーされた行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.SwapRows``1(``0[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            行列のrow1行とrow2行の要素を交換する
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="row1">交換する行番号(0,1,2...)</param>
+            <param name="row2">交換する行番号(0,1,2...)</param>
+        </member>
+        <member name="M:ImagingSolution.Mat.LuDecomposition(System.Double[0:,0:]@,System.Int32[]@)">
+            <summary>
+            LU分解
+            </summary>
+            <param name="mat"></param>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Inverse(System.Double[0:,0:])">
+            <summary>
+            逆行列を求めます。
+            </summary>
+            <param name="mat">行列（正方行列、二次元配列）を指定します。</param>
+            <returns>逆行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Inverse(System.Single[0:,0:])">
+            <summary>
+            逆行列を求めます。
+            </summary>
+            <param name="mat">行列（正方行列、二次元配列）を指定します。</param>
+            <returns>逆行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PseudoInverse(System.Single[0:,0:])">
+            <summary>
+            擬似逆行列を求めます。
+            </summary>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <returns>擬似逆行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PseudoInverse(System.Double[0:,0:])">
+            <summary>
+            擬似逆行列を求めます。
+            </summary>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <returns>擬似逆行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Reshape``1(``0[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            行列のサイズ（行数、列数）を変更します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="rows">変更後の行数（-1を指定すると自動調整）</param>
+            <param name="columns">変更後の列数（-1を指定すると自動調整）</param>
+            <returns>サイズが変更された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Flatten``1(``0[0:,0:])">
+            <summary>
+            行列（二次元配列）をN行１列の行列に変換します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <returns>N行１列の行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Cast``2(``0[0:,0:])">
+            <summary>
+            数値型行列（二次元配列）を別の型へ変換します。
+            </summary>
+            <typeparam name="T1">元の数値型</typeparam>
+            <typeparam name="T2">変換後の数値型</typeparam>
+            <param name="mat">変換後の行列</param>
+            <returns>型が変更された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Imread(System.String,System.Drawing.Bitmap@)">
+            <summary>
+            画像ファイル名を指定して画像データの行列（Byte型の二次元配列）を取得します。
+            カラーの場合、B,G,R,B,G,R...の順で格納されます。
+            </summary>
+            <param name="filename">画像のファイル名を指定します。</param>
+            <param name="bmp">開いた画像のBitmapクラスオブジェクトが格納されます。</param>
+            <returns>画像データが可能された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Imread(System.String)">
+            <summary>
+            画像ファイル名を指定して画像データの行列（Byte型の二次元配列）を取得します。
+            カラーの場合、B,G,R,B,G,R...の順で格納されます。
+            </summary>
+            <param name="filename">画像のファイル名を指定します。</param>
+            <returns>画像データが可能された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ImreadPlane(System.String,System.Drawing.Bitmap@)">
+            <summary>
+            画像ファイル名を指定して画像データのプレーン分離された行列（Byte型の二次元配列の配列）を取得します。
+            カラーの場合、[B][,], [G][,], [R][,]の順で格納されます。
+            </summary>
+            <param name="filename">画像のファイル名を指定します。</param>
+            <param name="bmp">開いた画像のBitmapクラスオブジェクトが格納されます。</param>
+            <returns>プレーン分離された画像データが可能された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ImreadPlane(System.String)">
+            <summary>
+            画像ファイル名を指定して画像データのプレーン分離された行列（Byte型の二次元配列の配列）を取得します。
+            カラーの場合、[B][,], [G][,], [R][,]の順で格納されます。
+            </summary>
+            <param name="filename">画像のファイル名を指定します。</param>
+            <returns>プレーン分離された画像データが可能された行列</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.SaveCsv``1(``0[0:,0:],System.String)">
+            <summary>
+            行列をCSVファイルに保存します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="filename">CSVファイル名（*.csv）を指定します。</param>
+        </member>
+        <member name="M:ImagingSolution.Mat.Print``1(``0[0:,0:],System.String,System.Boolean)">
+            <summary>
+            行列の内容をコンソールへ表示
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="title">行列表示の先頭行に表示する文字列を指定します。</param>
+            <param name="omission">10行より大きい行列のとき、中略表示する場合はtrue</param>
+        </member>
+        <member name="M:ImagingSolution.Mat.Print``1(``0[0:,0:],System.Boolean)">
+            <summary>
+            行列の内容をコンソールへ表示
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="mat">行列（二次元配列）を指定します。</param>
+            <param name="omission">大きい行列のとき、中略表示する場合はtrue</param>
+        </member>
+        <member name="T:ImagingSolution.Mat.NamedWindow">
+            <summary>
+            画像表示ウィンドウクラス
+            </summary>
+        </member>
+        <member name="M:ImagingSolution.Mat.NamedWindow.#ctor(System.String)">
+            <summary>
+            画像表示ウィンドウクラスのコンストラクタ
+            </summary>
+            <param name="winname"></param>
+        </member>
+        <member name="M:ImagingSolution.Mat.NamedWindow.Imshow(System.Drawing.Bitmap)">
+            <summary>
+            画像を表示します。
+            </summary>
+            <param name="bmp">表示するBitmapクラスオブジェクト</param>
+        </member>
+        <member name="M:ImagingSolution.Mat.Imshow(System.Drawing.Bitmap,System.String)">
+            <summary>
+            画像をウィンドウに表示します。
+            </summary>
+            <param name="bmp">表示するBitmapクラスオブジェクトを指定します。</param>
+            <param name="winname">ウィンドウタイトルを指定します。</param>
+            <returns>表示されたウィンドウオブジェクト</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.Imshow(System.Drawing.Bitmap,ImagingSolution.Mat.NamedWindow)">
+            <summary>
+            画像をウィンドウに表示します。
+            </summary>
+            <param name="bmp">表示するBitmapクラスオブジェクトを指定します。</param>
+            <param name="window">表示先のウィンドウオブジェクトを指定します。</param>
+            <returns>表示したウィンドウオブジェクト</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateMat``1(``0)">
+            <summary>
+            回転行列（同次座標系）を取得します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>回転行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateMat(System.Single)">
+            <summary>
+            回転行列（同次座標系）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>回転行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateMat(System.Double)">
+            <summary>
+            回転行列（同次座標系）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>回転行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateAtMat(System.Single,System.Single,System.Single)">
+            <summary>
+            指定座標（cX, cY）周りの回転行列（同次座標系）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <param name="cX">回転中心のX座標を指定します。</param>
+            <param name="cY">回転中心のY座標を指定します。</param>
+            <returns>回転行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateAtMat(System.Double,System.Double,System.Double)">
+            <summary>
+            指定座標（cX, cY）周りの回転行列（同次座標系）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <param name="cX">回転中心のX座標を指定します。</param>
+            <param name="cY">回転中心のY座標を指定します。</param>
+            <returns>回転行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleMat(System.Single,System.Single)">
+            <summary>
+            拡大行列（同次座標系）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <returns>拡大行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleMat(System.Double,System.Double)">
+            <summary>
+            拡大行列（同次座標系）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <returns>拡大行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleAtMat(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            指定座標（cX, cY）を基点とした拡大行列（同次座標系）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <param name="cX">拡大の基点となるX座標を指定します。</param>
+            <param name="cY">拡大の基点となるY座標を指定します。</param>
+            <returns>拡大行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleAtMat(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            指定座標（cX, cY）を基点とした拡大行列（同次座標系）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <param name="cX">拡大の基点となるX座標を指定します。</param>
+            <param name="cY">拡大の基点となるY座標を指定します。</param>
+            <returns>拡大行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.TranslateMat(System.Single,System.Single)">
+            <summary>
+            平行移動行列（同次座標系）を取得します。
+            </summary>
+            <param name="tX">X軸方向の移動量を指定します。</param>
+            <param name="tY">Y軸方向の移動量を指定します。</param>
+            <returns>平行移動行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.TranslateMat(System.Double,System.Double)">
+            <summary>
+            平行移動行列（同次座標系）を取得します。
+            </summary>
+            <param name="tX">X軸方向の移動量を指定します。</param>
+            <param name="tY">Y軸方向の移動量を指定します。</param>
+            <returns>平行移動行列（同次座標系）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateXMat(System.Single)">
+            <summary>
+            X軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>X軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateXMat(System.Double)">
+            <summary>
+            X軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>X軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateYMat(System.Single)">
+            <summary>
+            Y軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>Y軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateYMat(System.Double)">
+            <summary>
+            Y軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>Y軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateZMat(System.Single)">
+            <summary>
+            Z軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>Z軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.RotateZMat(System.Double)">
+            <summary>
+            Z軸周りの回転行列（三次元座標）を取得します。
+            </summary>
+            <param name="deg">回転角度を度数単位（°）で指定します。</param>
+            <returns>Z軸周りの回転行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleMat(System.Single,System.Single,System.Single)">
+            <summary>
+            拡大行列（三次元座標）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <param name="sZ">Z軸方向の倍率を指定します。</param>
+            <returns>拡大行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ScaleMat(System.Double,System.Double,System.Double)">
+            <summary>
+            拡大行列（三次元座標）を取得します。
+            </summary>
+            <param name="sX">X軸方向の倍率を指定します。</param>
+            <param name="sY">Y軸方向の倍率を指定します。</param>
+            <param name="sZ">Z軸方向の倍率を指定します。</param>
+            <returns>拡大行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.TranslateMat(System.Single,System.Single,System.Single)">
+            <summary>
+            平行移動行列（同次座標系、三次元座標）を取得します。
+            </summary>
+            <param name="tX">X軸方向の移動量を指定します。</param>
+            <param name="tY">Y軸方向の移動量を指定します。</param>
+            <param name="tZ">Z軸方向の移動量を指定します。</param>
+            <returns>平行移動行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.TranslateMat(System.Double,System.Double,System.Double)">
+            <summary>
+            平行移動行列（同次座標系、三次元座標）を取得します。
+            </summary>
+            <param name="tX">X軸方向の移動量を指定します。</param>
+            <param name="tY">Y軸方向の移動量を指定します。</param>
+            <param name="tZ">Z軸方向の移動量を指定します。</param>
+            <returns>平行移動行列（同次座標系、三次元座標）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PointToMat(System.Drawing.Point)">
+            <summary>
+            System.Drawing.Pointから同次座標系の行列（3行1列）へ変換します。
+            </summary>
+            <param name="p">System.Drawing.Pointの座標</param>
+            <returns>同次座標系の行列（3行1列）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PointToMat(System.Drawing.PointF)">
+            <summary>
+            System.Drawing.PointFから同次座標系の行列（3行1列）へ変換します。
+            </summary>
+            <param name="p">System.Drawing.PointFの座標</param>
+            <returns>同次座標系の行列（3行1列）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PointToMat(System.Drawing.Point[])">
+            <summary>
+            System.Drawing.Pointの配列から同次座標系の行列（3行N列）へ変換します。
+            </summary>
+            <param name="p">System.Drawing.Point[]の座標配列</param>
+            <returns>同次座標系の行列（3行N列）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.PointToMat(System.Drawing.PointF[])">
+            <summary>
+            System.Drawing.PointFの配列から同次座標系の行列（3行N列）へ変換します。
+            </summary>
+            <param name="p">System.Drawing.PointF[]の座標配列</param>
+            <returns>同次座標系の行列（3行N列）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ArrayToMat``1(``0[])">
+            <summary>
+            一次元配列から行列（N行1列の二次元配列）へ変換します。
+            </summary>
+            <typeparam name="T">数値型を指定します。</typeparam>
+            <param name="array">一次元配列</param>
+            <returns>行列（N行1列の二次元配列）</returns>
+        </member>
+        <member name="M:ImagingSolution.Mat.ThrowException(System.String,System.String)">
+            <summary>
+            エラーの例外を投げます。
+            </summary>
+            <param name="functionName"></param>
+            <param name="message"></param>
+        </member>
+    </members>
+</doc>
